@@ -12,7 +12,8 @@ namespace Project.Test
         {
             new User(1, "Petya", "Vasichkin"),
             new User(2, "Vasya", "Petrov"),
-            new User(3, "Jenya", "Sachkov")
+            new User(3, "Jenya", "Sachkov"),
+            new User(4, "Vika", "Ivanova")
         };
 
         private static void Terminal()
