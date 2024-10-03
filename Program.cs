@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Project.Test
 {
-    internal class Program
+    static class Program
     {
+        private static readonly List<User> _users = new List<User>()
+        {
+            new User(1, "Petya", "Vasichkin"),
+            new User(2, "Vasya", "Petrov"),
+            new User(3, "Jenya", "Sachkov")
+        };
+            
+        ];
+
         private static void Terminal()
         {
             while (true)
@@ -15,8 +24,8 @@ namespace Project.Test
                 Console.WriteLine("\nSystem.");
                 Console.WriteLine("1. Get authors list.");
                 Console.WriteLine("2. Get author by identifier.");
-                Console.WriteLine("3. Exist.");
-                Console.WriteLine("Your choice: ");
+                Console.WriteLine("3. Exit.");
+                Console.Write("Your choice: ");
 
                 var choice = Convert.ToInt32(Console.ReadLine());
 
@@ -44,12 +53,23 @@ namespace Project.Test
 
         private static void GetAuthors()
         {
-            throw new NotImplementedException();
+            if (_users.Count == 0)
+            {
+                Console.WriteLine("\nThere aren't users yet!");
+                return;
+            }
+
+            Console.WriteLine("\nAuthors:");
+            for (var k = 0; k < _users.Count; k++)
+            {
+                Console.WriteLine($"{k + 1} - {_users[k].Surname} {_users[k].Name}");
+            }
+            Console.WriteLine();
         }
 
-        static void Main(string[] args)
+        public static void Main()
         {
-            
+            Terminal();
         }
     }
 }
