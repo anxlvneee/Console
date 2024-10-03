@@ -47,7 +47,18 @@ namespace Project.Test
 
         private static void GetAuthorById()
         {
-            throw new NotImplementedException();
+            Console.Write("Enter author identifier: ");
+            var data = Convert.ToInt32(Console.ReadLine());
+
+            var author = _users.FirstOrDefault(a => a.Id == data);
+
+            if (author is null)
+            {
+                Console.WriteLine("\nAuthor not found!");
+                return;
+            }
+
+            Console.WriteLine($"{author.Id} - {author.Surname} {author.Name}");
         }
 
         private static void GetAuthors()
