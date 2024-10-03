@@ -37,7 +37,7 @@ namespace Project.Test
                         GetAuthorById();
                         break;
                     case 3:
-                        Console.WriteLine("\nGood bye!");
+                        Console.WriteLine("\nGood bye!!");
                         return;
                     default:
                         Console.WriteLine("\nEnter correct data!");
